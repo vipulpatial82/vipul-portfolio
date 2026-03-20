@@ -1,5 +1,6 @@
 import "./Footer.css";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
     return (
@@ -13,13 +14,13 @@ export const Footer = () => {
 
                 <div className="footer-socials">
                     <a href="https://github.com/vipulpatial82" target="_blank" rel="noopener noreferrer" aria-label="Github">
-                        <Github size={24} />
+                        <FaGithub size={24} />
                     </a>
                     <a href="https://www.linkedin.com/in/vipulpatial18/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <Linkedin size={24} />
+                        <FaLinkedin size={24} />
                     </a>
                     <a href="mailto:vipulpatial82@gmail.com" aria-label="Email">
-                        <Mail size={24} />
+                        <MdEmail size={24} />
                     </a>
                 </div>
 

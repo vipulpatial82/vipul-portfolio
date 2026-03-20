@@ -40,7 +40,9 @@
 
 .footer-socials {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-socials a {
@@ -49,10 +51,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-secondary);
     border-radius: 50%;
     color: var(--text-secondary);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(128, 128, 128, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -66,7 +68,7 @@
 .footer-copyright {
     margin-top: 1rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
     width: 100%;
     max-width: 600px;
 }

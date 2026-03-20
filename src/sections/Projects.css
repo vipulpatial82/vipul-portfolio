@@ -1,26 +1,42 @@
 .projects-section {
     background-color: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.title-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    color: var(--accent-primary);
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
     background: var(--bg-primary);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(128, 128, 128, 0.15);
     overflow: hidden;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
+    cursor: pointer;
+}
+
+.project-card.featured {
+    border-color: rgba(59, 130, 246, 0.3);
 }
 
 .project-card:hover {
-    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3);
-    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-5px);
 }
 
 .project-content {
@@ -28,6 +44,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 .project-title {
@@ -35,6 +53,7 @@
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 .project-description {
@@ -53,8 +72,12 @@
 .project-tag {
     font-size: 0.8rem;
     color: var(--accent-primary);
-    /* background: rgba(59, 130, 246, 0.1); */
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
     font-family: monospace;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .project-links {
@@ -70,15 +93,32 @@
     color: var(--text-secondary);
     font-weight: 500;
     font-size: 0.95rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: rgba(128, 128, 128, 0.05);
 }
 
 .project-link:hover {
     color: var(--accent-primary);
+    background: rgba(59, 130, 246, 0.1);
 }
 
-@media (max-width: 600px) {
+.demo-link:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+}
+
+@media (max-width: 640px) {
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    .project-content {
+        padding: 1.5rem;
+    }
+    .project-title {
+        font-size: 1.25rem;
+    }
+    .project-links {
+        gap: 1rem;
     }
 }

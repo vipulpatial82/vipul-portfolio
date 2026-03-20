@@ -14,12 +14,12 @@
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+    gap: 3rem;
     background: var(--bg-primary);
-    /* Card background like look */
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .contact-info {
@@ -72,7 +72,7 @@
     background: var(--bg-secondary);
     border-radius: 50%;
     color: var(--text-secondary);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(128, 128, 128, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -94,7 +94,7 @@
     width: 100%;
     padding: 1rem;
     background: var(--bg-secondary);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(128, 128, 128, 0.2);
     border-radius: var(--radius-md);
     color: var(--text-primary);
     font-family: inherit;
@@ -106,7 +106,7 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-secondary);
 }
 
 .submit-btn {
@@ -116,10 +116,52 @@
     gap: 0.5rem;
 }
 
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.status-message {
+    margin-top: -0.5rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.status-message.success {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-message.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
 @media (max-width: 768px) {
     .contact-container {
         grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 2rem;
+        gap: 2rem;
+        padding: 1.75rem;
+    }
+    .contact-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 1.25rem;
+    }
+    .submit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .social-links {
+        flex-wrap: wrap;
     }
 }

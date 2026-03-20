@@ -20,9 +20,15 @@
     backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     position: relative;
+}
+
+[data-theme="light"] .about-text-container {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .about-text-container::before {
@@ -85,15 +91,25 @@
 }
 
 .stat-item {
-    background: rgba(17, 17, 17, 0.6);
+    background: var(--bg-secondary);
     backdrop-filter: blur(5px);
     padding: 2rem;
     border-radius: var(--radius-lg);
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
+}
+
+[data-theme="light"] .stat-item {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .stat-label {
+    color: #4b5563;
 }
 
 .stat-item::after {
@@ -140,7 +156,7 @@
 @media (max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
     }
 
     .about-stats {
@@ -149,5 +165,21 @@
 
     .stat-item:last-child {
         grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text-container {
+        padding: 1.5rem;
+    }
+    .about-text p {
+        font-size: 1rem;
+    }
+    .stat-number {
+        font-size: 2.75rem;
+    }
+    .stat-label {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
     }
 }

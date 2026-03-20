@@ -23,6 +23,15 @@
   --radius-lg: 1rem;
 }
 
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,10 +44,9 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  /* Subtle grain/noise texture overlay if desired, simulated with gradient for now */
-  background-image:
-    radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.03) 0%, transparent 25%);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -67,22 +75,35 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: rgba(128, 128, 128, 0.4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333;
+  background: rgba(128, 128, 128, 0.6);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-sm);
+  padding: 0 1.25rem;
 }
 
 .section {
   padding: var(--spacing-lg) 0;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .section {
+    padding: 3rem 0;
+  }
+  .btn {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
 
 .gradient-text {

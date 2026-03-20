@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { FaArrowRight, FaDownload, FaBullseye, FaHandshake, FaSyncAlt, FaUserSecret } from "react-icons/fa";
+import { TypeAnimation } from 'react-type-animation';
+import profileImg from "./profile.jpeg";
 import "./Hero.css";
-import resume from "../assets/vipulcv.pdf"; // Corrected path
+import resume from "../assets/vipulcv.pdf";
 
 export const Hero = () => {
 
@@ -14,6 +16,12 @@ export const Hero = () => {
 
     return (
         <section id="hero" className="section hero-section">
+            <div className="floating-shapes">
+                <div className="shape shape-1"></div>
+                <div className="shape shape-2"></div>
+                <div className="shape shape-3"></div>
+            </div>
+            
             <div className="container hero-container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -21,21 +29,65 @@ export const Hero = () => {
                     transition={{ duration: 0.5 }}
                     className="hero-content"
                 >
-                    <span className="hero-greeting">Hi, I'm</span>
-                    <h1 className="hero-name">Vipul Patial</h1>
-                    <h2 className="hero-title">Full Stack Engineer</h2>
-                    <p className="hero-tagline">
+                    <motion.span 
+                        className="hero-greeting"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        Hi, I'm
+                    </motion.span>
+                    
+                    <h1 className="hero-name">
+                        <motion.span
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            Vipul Patial
+                        </motion.span>
+                    </h1>
+                    
+                    <h2 className="hero-title">
+                        <TypeAnimation
+                            sequence={[
+                                'Full Stack Engineer',
+                                2000,
+                                'React Developer',
+                                2000,
+                                'Node.js Developer',
+                                2000,
+                                'Problem Solver',
+                                2000,
+                            ]}
+                            wrapper="span"
+                            speed={50}
+                            repeat={Infinity}
+                        />
+                    </h2>
+                    
+                    <motion.p 
+                        className="hero-tagline"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                    >
                         Building scalable, user-centric web applications from frontend to backend.
-                    </p>
+                    </motion.p>
 
-                    <div className="hero-buttons">
-                        <button onClick={scrollToProjects} className="btn btn-primary">
-                            View Projects <ArrowRight size={18} className="btn-icon" />
+                    <motion.div 
+                        className="hero-buttons"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6 }}
+                    >
+                        <button onClick={scrollToProjects} className="btn btn-primary btn-animated">
+                            View Projects <FaArrowRight className="btn-icon" />
                         </button>
-                        <a href={resume} download="Vipul_Patial_Resume.pdf" className="btn btn-outline">
-                            Download Resume <Download size={18} className="btn-icon" />
+                        <a href={resume} download="Vipul_Patial_Resume.pdf" className="btn btn-outline btn-animated">
+                            Download Resume <FaDownload className="btn-icon" />
                         </a>
-                    </div>
+                    </motion.div>
                 </motion.div>
 
                 <motion.div
@@ -44,25 +96,16 @@ export const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="hero-visual"
                 >
-                    <div className="code-block">
-                        <div className="code-header">
-                            <span className="dot red"></span>
-                            <span className="dot yellow"></span>
-                            <span className="dot green"></span>
+                    <div className="profile-container">
+                        <div className="profile-ring">
+                            <img src={profileImg} alt="Vipul Patial" className="profile-img" />
                         </div>
-                        <pre>
-                            <code>
-                                <span className="keyword">const</span> <span className="variable">developer</span> = &#123;
-                                <span className="property">name</span>: <span className="string">"Vipul Patial"</span>,
-                                <span className="property">role</span>: <span className="string">"Full Stack Developer"</span>,
-                                <span className="property">skills</span>: [
-                                <span className="string">"React"</span>, <span className="string">"Node.js"</span>,
-                                <span className="string">"MongoDB"</span>, <span className="string">"Express"</span>
-                                ],
-                                <span className="property">hardWorker</span>: <span className="boolean">true</span>
-                                &#125;;
-                            </code>
-                        </pre>
+                        <div className="floating-tags">
+                            <span className="ftag ftag-1"><FaBullseye /> Problem Solving</span>
+                            <span className="ftag ftag-2"><FaHandshake /> Teamwork</span>
+                            <span className="ftag ftag-3"><FaSyncAlt /> Adaptability</span>
+                            <span className="ftag ftag-4"><FaUserSecret /> Ambivert</span>
+                        </div>
                     </div>
                 </motion.div>
             </div>

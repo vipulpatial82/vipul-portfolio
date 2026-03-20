@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { HiMenu, HiX } from "react-icons/hi";
+import { BsSun, BsMoon } from "react-icons/bs";
 import "./Navbar.css";
 
-export const Navbar = () => {
+export const Navbar = ({ toggleTheme, theme }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -16,7 +17,8 @@ export const Navbar = () => {
         { name: "About", href: "#about" },
         { name: "Skills", href: "#skills" },
         { name: "Projects", href: "#projects" },
-        { name: "Experience", href: "#experience" },
+        { name: "Education", href: "#experience" },
+        { name: "Certifications", href: "#certifications" },
         { name: "Contact", href: "#contact" },
     ];
 
@@ -53,12 +55,17 @@ export const Navbar = () => {
                     ))}
                 </div>
 
-                <button
-                    className="mobile-menu-btn"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                <div className="nav-right">
+                    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+                        {theme === "dark" ? <BsSun size={20} /> : <BsMoon size={20} />}
+                    </button>
+                    <button
+                        className="mobile-menu-btn"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+                    </button>
+                </div>
             </div>
 
             {isOpen && (
