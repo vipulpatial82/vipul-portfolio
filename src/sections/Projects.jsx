@@ -8,10 +8,10 @@ const projects = [
     {
         title: "Owen Express – Online Food Shop",
         description: "A full-stack food ordering platform featuring a reusable component architecture, responsive UI, and real-time updates for menus and orders.",
-        tags: ["React", "Node.js", "Express.js", "MongoDB", "Axios"],
+        tags: ["React", "Node.js", "Express.js", "MongoDB", "Firebase","Cloudinary"],
         links: {
             github: "https://github.com/vipulpatial82",
-            demo: "https://food-webiste-6zwl.vercel.app/"
+            demo: "https://owen-express-food.vercel.app/"
         },
         featured: true
     },
