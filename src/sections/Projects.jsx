@@ -7,7 +7,7 @@ import "./Projects.css";
 const projects = [
     {
         title: "Owen Express – Online Food Shop",
-        description: "A full-stack food ordering platform featuring a reusable component architecture, responsive UI, and real-time updates for menus and orders.",
+        description: "A full-stack MERN food delivery and restaurant management platform with real-time order tracking, role-based admin control, and secure authentication. Built using a modern architecture and integrated with cloud services to ensure smooth performance and scalable media handling.",
         tags: ["React", "Node.js", "Express.js", "MongoDB", "Firebase","Cloudinary"],
         links: {
             github: "https://github.com/vipulpatial82",

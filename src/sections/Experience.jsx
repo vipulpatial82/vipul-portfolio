@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaGraduationCap, FaMedal, FaEye } from "react-icons/fa";
 import cert1 from "../assets/cloud computing nptel.pdf";
 import cert2 from "../assets/SkillDevelopmentCertificateVipul.pdf";
+import cert3 from "../assets/dsa.pdf";
 import "./Experience.css";
 
 export const Experience = () => {
@@ -76,6 +77,17 @@ export const Experience = () => {
                                 <h4 className="timeline-subtitle">IIT Kharagpur</h4>
                                 <p className="timeline-text">Gained in-depth knowledge of cloud infrastructure, virtualization, and distributed systems.</p>
                                 <a href={cert1} target="_blank" rel="noopener noreferrer" className="cert-btn">
+                                    <FaEye size={14} /> View Certificate
+                                </a>
+                            </div>
+                        </div>
+                        <div className="timeline-item">
+                            <div className="timeline-icon"><FaMedal size={22} /></div>
+                            <div className="timeline-content">
+                                <span className="timeline-date">Certified</span>
+                                <h3 className="timeline-title">Data Structures and Algorithms</h3>
+                                <p className="timeline-text">Comprehensive knowledge in data structures, algorithms, and problem-solving techniques.</p>
+                                <a href={cert3} target="_blank" rel="noopener noreferrer" className="cert-btn">
                                     <FaEye size={14} /> View Certificate
                                 </a>
                             </div>

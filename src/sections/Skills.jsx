@@ -7,9 +7,9 @@ const skillsData = [
     { category: "Languages", skills: ["JavaScript", "C++", "Java",  "C"], icon: FaCode },
     { category: "Frontend", skills: ["React", "HTML5", "CSS3", "Redux", "Tailwind (Concepts)"], icon: FaBolt },
     { category: "Backend", skills: ["Node.js", "Express.js", "REST APIs","Laravel","PHP"], icon: FaCode },
-    { category: "Databases", skills: ["MongoDB", "MySQL"], icon: FaBolt },
+    { category: "Databases", skills: ["MongoDB", "MySQL","DBMS"], icon: FaBolt },
     { category: "Tools", skills: ["Git", "GitHub", "Postman", "VS Code","Docker","AWS"], icon: FaCode },
-    { category: "Soft Skills", skills: ["Problem Solving", "Teamwork", "Adaptability"], icon: FaBolt },
+    { category: "Soft Skills", skills: ["Problem Solving", "Teamwork", "Adaptability"," Time Management","Ambivert"], icon: FaBolt },
 ];
 
 export const Skills = () => {

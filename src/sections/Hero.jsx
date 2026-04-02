@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaArrowRight, FaDownload, FaBullseye, FaHandshake, FaSyncAlt, FaUserSecret } from "react-icons/fa";
 import { TypeAnimation } from 'react-type-animation';
-import profileImg from "./profile.jpeg";
+import profileImg from "./new1.png";
 import "./Hero.css";
 import resume from "../assets/vipulcv.pdf";
 
